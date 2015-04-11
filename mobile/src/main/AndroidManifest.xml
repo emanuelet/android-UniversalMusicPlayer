@@ -16,7 +16,7 @@
   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.android.uamp" >
+    package="com.etapps.android.uamp" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -31,7 +31,7 @@
         android:required="false" />
 
     <application
-        android:name=".UAMPApplication"
+        android:name="com.etapps.android.uamp.UAMPApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
@@ -46,7 +46,7 @@
 
         <!-- Main activity for music browsing on phone -->
         <activity
-            android:name=".ui.MusicPlayerActivity"
+            android:name="com.etapps.android.uamp.ui.MusicPlayerActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -62,7 +62,7 @@
 
         <!-- Placeholder activity for phone UI -->
         <activity
-            android:name=".ui.PlaceholderActivity"
+            android:name="com.etapps.android.uamp.ui.PlaceholderActivity"
             android:label="@string/app_name">
         </activity>
 
@@ -70,13 +70,13 @@
         the current environment
         TODO:  TV is not yet supported, this is just a placeholder! -->
         <activity
-            android:name=".ui.NowPlayingActivity"
+            android:name="com.etapps.android.uamp.ui.NowPlayingActivity"
             android:icon="@drawable/ic_launcher">
         </activity>
 
         <!--
              (OPTIONAL) use this meta data to indicate which icon should be
-             used in Android Auto media notifications (for example, when the
+             used in Android Auto media notifications (for etapps, when the
              music changes and the user is looking at another app)
         -->
         <meta-data
@@ -96,7 +96,7 @@
          consumers through MediaBrowserService and MediaSession. Consumers connect to it through
          MediaBrowser (for browsing) and MediaController (for play session control) -->
         <service
-            android:name=".MusicService"
+            android:name="com.etapps.android.uamp.MusicService"
             android:exported="true"
             tools:ignore="ExportedService">
             <intent-filter>
@@ -111,13 +111,13 @@
         <!-- A full screen activity showing controls and a seek bar for
              the current playing music -->
         <activity
-            android:name=".ui.FullScreenPlayerActivity"
+            android:name="com.etapps.android.uamp.ui.FullScreenPlayerActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:parentActivityName=".ui.MusicPlayerActivity">
+            android:parentActivityName="com.etapps.android.uamp.ui.MusicPlayerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.MusicPlayerActivity"/>
+                android:value="com.etapps.android.uamp.ui.MusicPlayerActivity"/>
         </activity>
     </application>
 
